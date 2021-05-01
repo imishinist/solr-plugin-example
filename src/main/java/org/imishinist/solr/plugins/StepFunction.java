@@ -53,11 +53,18 @@ public class StepFunction extends ValueSource {
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(this.steps) + this.source.hashCode();
+        int result = 123;
+        result *= 31;
+        result += Arrays.hashCode(this.steps);
+        result *= 31;
+        result += Arrays.hashCode(this.points);
+        result *= 31;
+        result += this.source.hashCode();
+        return result;
     }
 
     @Override
     public String description() {
-        return name() + '(' + Arrays.toString(this.steps) + ')';
+        return name() + "(steps: [" + Arrays.toString(this.steps) + "], points: [" + Arrays.toString(this.points) + "])";
     }
 }
