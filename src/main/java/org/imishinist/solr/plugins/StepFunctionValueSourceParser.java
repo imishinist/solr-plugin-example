@@ -6,8 +6,6 @@ import org.apache.solr.search.FunctionQParser;
 import org.apache.solr.search.SyntaxError;
 import org.apache.solr.search.ValueSourceParser;
 
-import java.util.ArrayList;
-
 public class StepFunctionValueSourceParser extends ValueSourceParser {
     @Override
     public void init(NamedList namedList) {
