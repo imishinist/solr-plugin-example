@@ -45,6 +45,19 @@ public class DotProductFunction extends ValueSource {
                 }
                 return sum;
             }
+
+            @Override
+            public String toString(int doc) throws IOException {
+                String[] v1s = new String[length];
+                String[] v2s = new String[length];
+
+                for (int i = 0; i < length; i++) {
+                    v1s[i] = Float.toString(fs1[i].floatVal(doc));
+                    v2s[i] = Float.toString(fs2[i].floatVal(doc));
+                }
+
+                return Arrays.toString(v1s) + " " + Arrays.toString(v2s);
+            }
         };
     }
 

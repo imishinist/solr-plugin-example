@@ -38,6 +38,11 @@ public class StepFunction extends ValueSource {
                 int i = Arrays.binarySearch(steps, x);
                 return points[i];
             }
+
+            @Override
+            public String toString(int doc) throws IOException {
+                return Float.toString(s.floatVal(doc));
+            }
         };
     }
 
@@ -65,6 +70,6 @@ public class StepFunction extends ValueSource {
 
     @Override
     public String description() {
-        return name() + "(steps: [" + Arrays.toString(this.steps) + "], points: [" + Arrays.toString(this.points) + "])";
+        return name() + "(steps: " + Arrays.toString(this.steps) + ", points: " + Arrays.toString(this.points) + ")";
     }
 }
