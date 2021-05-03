@@ -56,7 +56,7 @@ public class DotProductFunction extends ValueSource {
                     v2s[i] = Float.toString(fs2[i].floatVal(doc));
                 }
 
-                return Arrays.toString(v1s) + " " + Arrays.toString(v2s);
+                return name() + "(" + Arrays.toString(v1s) + "," + Arrays.toString(v2s) + ")";
             }
         };
     }
