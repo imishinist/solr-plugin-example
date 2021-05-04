@@ -14,7 +14,7 @@ public class DotProductFunction extends ValueSource {
     protected final ValueSource[] value2;
 
     public DotProductFunction(ValueSource[] value1, ValueSource[] value2) {
-        assert(value1.length == value2.length);
+        assert (value1.length == value2.length);
         this.value1 = value1;
         this.value2 = value2;
     }
@@ -37,6 +37,15 @@ public class DotProductFunction extends ValueSource {
         return new FloatDocValues(this) {
             @Override
             public float floatVal(int doc) throws IOException {
+                // for optimization
+                if (length == 1) {
+                    return fs1[0].floatVal(doc) * fs2[0].floatVal(doc);
+                }
+                if (length == 2) {
+                    return fs1[0].floatVal(doc) * fs2[0].floatVal(doc) +
+                            fs1[1].floatVal(doc) * fs2[1].floatVal(doc);
+                }
+
                 float sum = 0.0F;
                 for (int i = 0; i < length; i++) {
                     float v1 = fs1[i].floatVal(doc);
@@ -85,6 +94,6 @@ public class DotProductFunction extends ValueSource {
 
     @Override
     public String description() {
-        return name() + "(" + Arrays.toString(value1) + " * " + Arrays.toString(value2) +  ")";
+        return name() + "(" + Arrays.toString(value1) + " * " + Arrays.toString(value2) + ")";
     }
 }

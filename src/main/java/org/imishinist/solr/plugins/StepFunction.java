@@ -36,6 +36,9 @@ public class StepFunction extends ValueSource {
                 if (x < steps[0] || steps[steps.length - 1] <= x)
                     return 0;
                 int i = Arrays.binarySearch(steps, x);
+                if (i < 0) {
+                    return 0;
+                }
                 return points[i];
             }
 
