@@ -26,3 +26,17 @@ ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-QP
 ```xml:solrconfig.xml
 <queryParser name="myquery" class="org.imishinist.solr.plugins.MyQueryParserPlugin" />
 ```
+
+## SearchComponent
+
+独自の検索機能を作りたい時に使う。  
+例えば、LTR, MoreLikeThis, Facetのようなもの。
+
+ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-SearchComponent
+
+実際の例:
+```xml:solrconfig.xml
+<searchComponent name="mysearch" class="org.imishinist.solr.plugins.MySearchComponent" />
+```
+
+上記の内容を、requestHandlerの中に入れれば動く。(ただしRequestHandlerはsolr.SearchHandlerを使用している想定）
