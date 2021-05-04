@@ -21,3 +21,8 @@ class="org.imishinis.solr.plugins.DotProductFunctionValueSourceParser" />
 独自のクエリの投げ方を実装できる。
 
 ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-QParserPlugin
+
+実際の例:
+```xml:solrconfig.xml
+<queryParser name="myquery" class="org.imishinist.solr.plugins.MyQueryParserPlugin" />
+```
