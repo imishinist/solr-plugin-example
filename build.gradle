@@ -10,6 +10,9 @@ compileJava.options.encoding = 'UTF-8'
 repositories {
     mavenCentral()
     jcenter()
+    maven {
+        url "https://maven.restlet.talend.com"
+    }
 }
 
 dependencies {
