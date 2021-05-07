@@ -37,6 +37,22 @@ ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-Se
 実際の例:
 ```xml:solrconfig.xml
 <searchComponent name="mysearch" class="org.imishinist.solr.plugins.MySearchComponent" />
+
+<requestHandler name="/select" class="solr.SearchHandler">
+    <arr name="components">
+      <str>mysearch</str>
+    </arr>
+</requestHandler
 ```
 
 上記の内容を、requestHandlerの中に入れれば動く。(ただしRequestHandlerはsolr.SearchHandlerを使用している想定）
+
+## RequestHandler
+
+リクエストの投げ方を自分の好きにしたい時に使う。
+
+実際の例:
+```xml:solrconfig.xml
+<requestHandler name="/noop" class="org.imishinist.solr.plugins.NoRequestHandler">
+</requestHandler>
+```
