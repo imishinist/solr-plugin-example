@@ -56,3 +56,11 @@ ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-Se
 <requestHandler name="/noop" class="org.imishinist.solr.plugins.NoRequestHandler">
 </requestHandler>
 ```
+
+# License
+
+MIT
+
+# Author
+
+imishinist (Taisuke Miyazaki)
