@@ -51,6 +51,8 @@ ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-Se
 
 リクエストの投げ方を自分の好きにしたい時に使う。
 
+ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-SolrRequestHandler
+
 実際の例:
 ```xml:solrconfig.xml
 <requestHandler name="/noop" class="org.imishinist.solr.plugins.NoRequestHandler">
