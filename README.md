@@ -39,10 +39,16 @@ ref: https://cwiki.apache.org/confluence/display/SOLR/SolrPlugins#SolrPlugins-Se
 <searchComponent name="mysearch" class="org.imishinist.solr.plugins.MySearchComponent" />
 
 <requestHandler name="/select" class="solr.SearchHandler">
+    <!-- specify components -->
     <arr name="components">
       <str>mysearch</str>
     </arr>
-</requestHandler
+
+    <!-- append components -->
+    <arr name="last-components">
+      <str>mysearch</str>
+    </arr>
+</requestHandler>
 ```
 
 上記の内容を、requestHandlerの中に入れれば動く。(ただしRequestHandlerはsolr.SearchHandlerを使用している想定）
