@@ -13,7 +13,7 @@ class="org.imishinist.solr.plugins.MyValueSourceParser" />
 <valueSourceParser name="step"
 class="org.imishinist.solr.plugins.StepFunctionValueSourceParser" />
 <valueSourceParser name="dotproduct"
-class="org.imishinis.solr.plugins.DotProductFunctionValueSourceParser" />
+class="org.imishinist.solr.plugins.DotProductFunctionValueSourceParser" />
 ```
 
 ## QParserPlugin
