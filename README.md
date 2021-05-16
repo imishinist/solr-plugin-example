@@ -14,6 +14,8 @@ class="org.imishinist.solr.plugins.MyValueSourceParser" />
 class="org.imishinist.solr.plugins.StepFunctionValueSourceParser" />
 <valueSourceParser name="dotproduct"
 class="org.imishinist.solr.plugins.DotProductFunctionValueSourceParser" />
+<valueSourceParser name="rand"
+class="org.imishinist.solr.plugins.RandFunctionValueSourceParser" />
 ```
 
 ## QParserPlugin
