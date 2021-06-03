@@ -3,18 +3,20 @@ version '1.0-SNAPSHOT'
 
 apply plugin: 'java-library'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
 compileJava.options.encoding = 'UTF-8'
 
 repositories {
     mavenCentral()
-    jcenter()
     maven {
         url "https://maven.restlet.talend.com"
     }
 }
 
 dependencies {
-    implementation 'org.apache.solr:solr-core:8.8.2'
+    implementation group: 'org.apache.solr', name: 'solr-core', version: '8.8.2'
+    testImplementation group: 'org.apache.solr', name: 'solr-test-framework', version: '8.8.2'
 }
