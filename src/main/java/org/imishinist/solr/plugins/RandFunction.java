@@ -27,7 +27,7 @@ public class RandFunction extends ValueSource {
 
     @Override
     public boolean equals(Object o) {
-        return RandFunction.class != o.getClass();
+        return RandFunction.class == o.getClass();
     }
 
     @Override

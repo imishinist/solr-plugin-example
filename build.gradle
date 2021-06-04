@@ -4,8 +4,8 @@ version '1.0-SNAPSHOT'
 apply plugin: 'java-library'
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_11
-    targetCompatibility = JavaVersion.VERSION_11
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
 }
 compileJava.options.encoding = 'UTF-8'
 
@@ -19,4 +19,8 @@ repositories {
 dependencies {
     implementation group: 'org.apache.solr', name: 'solr-core', version: '8.8.2'
     testImplementation group: 'org.apache.solr', name: 'solr-test-framework', version: '8.8.2'
+}
+
+test {
+    systemProperty 'test.solr.allowed.securerandom', 'NativePRNG'
 }
