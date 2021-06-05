@@ -7,6 +7,7 @@ import org.apache.lucene.queries.function.docvalues.IntDocValues;
 
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Map;
 
 public class StepFunction extends ValueSource {
@@ -35,11 +36,13 @@ public class StepFunction extends ValueSource {
 
                 if (x < steps[0] || steps[steps.length - 1] <= x)
                     return 0;
-                int i = Arrays.binarySearch(steps, x);
-                if (i < 0) {
+                int result = Arrays.binarySearch(steps, x);
+                int insertionPoint = (result >= 0) ? result : ~result;
+
+                if (insertionPoint >= steps.length) {
                     return 0;
                 }
-                return points[i];
+                return points[insertionPoint];
             }
 
             @Override
