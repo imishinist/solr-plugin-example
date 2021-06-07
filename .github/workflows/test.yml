@@ -26,9 +26,3 @@ jobs:
           arguments: test
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Upload artifact
-        uses: actions/upload-artifact@v1.0.0
-        with:
-          name: test-result
-          path: build/reports/tests
