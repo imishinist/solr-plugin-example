@@ -15,6 +15,21 @@ public class MountainFunction extends ValueSource {
     protected final double a;
     protected final double b1, b2;
 
+    /**
+     * y = a * x + b1 (x <= px) - - - 1
+     * y = -a * x + b2 (other)  - - - 2
+     *
+     * px, a, bからb2を計算すると
+     * py = a * px + b1
+     * 2にpx, pyを代入して
+     * a * px + b1 = -a * px + b2
+     * b2 = 2 * px + b1
+     *
+     * @param source ValueSource
+     * @param px double
+     * @param a double
+     * @param b double
+     */
     public MountainFunction(ValueSource source, double px, double a, double b) {
         this.source = source;
         this.px = px;
