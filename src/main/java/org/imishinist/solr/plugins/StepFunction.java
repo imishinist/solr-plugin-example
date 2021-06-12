@@ -59,7 +59,8 @@ public class StepFunction extends ValueSource {
 
         StepFunction other = (StepFunction) o;
         return this.source.equals(other.source) &&
-                Arrays.equals(this.steps, other.steps);
+                Arrays.equals(this.steps, other.steps) &&
+                Arrays.equals(this.points, other.points);
     }
 
     @Override
